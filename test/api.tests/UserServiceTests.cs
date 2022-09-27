@@ -16,6 +16,7 @@ public class UserServiceTests
 
         var result = await svc.CreateUser(new SignupUser { Email = "asd@asd.no", Password = "asd", ConfirmPassword = "asd" });
 
+        mockRepo.Verify(r => r.Insert(It.IsAny<User>()), Times.Once);
         Assert.True(result);
     }
 
