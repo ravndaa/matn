@@ -16,6 +16,7 @@ public class UserService : IUserService
 
     public async Task CreateUser(SignupUser user)
     {
+        await Task.Delay(1);
         throw new NotImplementedException();
     }
 }
