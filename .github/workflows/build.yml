@@ -1,4 +1,4 @@
-name: dotnet package
+name: dotnet build and test before merge
 
 on: [pull_request]
 
@@ -11,5 +11,5 @@ jobs:
       with:
         dotnet-version: '7.0.x'
         include-prerelease: true
-    - run: dotnet test
     - run: dotnet build
+    - run: dotnet test
