@@ -14,7 +14,7 @@ public static class SqliteInMemoryDatabase
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 name text not null,
                 password text not null,
-                email text not null
+                email text not null UNIQUE
             )");
 
         connection.Execute("INSERT INTO users (name,password,email) VALUES (@name, @password, @email)", new { name = "stian", password = "asd", email = "asd@asd.no" });

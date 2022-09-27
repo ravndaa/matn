@@ -17,9 +17,10 @@ public class SqliteUserRepository : ISqliteUserRepository
         _conString = conString;
     }
 
-    public Task Insert(User item)
+    public async Task Insert(User item)
     {
-        throw new NotImplementedException();
+        using var connection = new SqliteConnection(_conString);
+        await connection.ExecuteAsync("INSERT INTO users (name, password,email) VALUES (@name, @password, @email)", new { name = item.Name, email = item.Email, password = item.Password });
     }
 
     public async Task<User?> Get(int id)
