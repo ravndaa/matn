@@ -1,7 +1,7 @@
 ### stuff to read:
 
 - https://github.com/dotnet/format
-
+- https://xunit.net/docs/shared-context
 
 
 ### notes to remember.

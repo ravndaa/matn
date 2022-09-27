@@ -22,6 +22,7 @@ public class SqliteUserRepositoryTests : IDisposable
         var db = new SqliteUserRepository(conString);
 
         var res = await db.Get(1);
+
         Assert.NotNull(res);
         Assert.Equal("asd@asd.no", res.Email);
     }
@@ -40,8 +41,7 @@ public class SqliteUserRepositoryTests : IDisposable
     {
         var db = new SqliteUserRepository(conString);
 
-        await db.Insert(new User { Name = "test", Email = "testfail@test.no", Password = "passordet" });
-        await Assert.ThrowsAsync<SqliteException>(async () => await db.Insert(new User { Name = "test", Email = "testfail@test.no", Password = "passordet" }));
+        await Assert.ThrowsAsync<SqliteException>(async () => await db.Insert(new User { Name = "stian", Email = "asd@asd.no", Password = "passordet" }));
     }
 
     public void Dispose()
