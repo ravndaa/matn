@@ -21,7 +21,7 @@ public class SqliteUserRepositoryTests : IDisposable
         var db = new SqliteUserRepository(conString);
 
         var res = await db.Get(1);
-
+        Assert.NotNull(res);
         Assert.Equal("asd@asd.no", res.Email);
     }
 
