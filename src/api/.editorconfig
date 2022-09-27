@@ -1,6 +1,0 @@
-root = true
-
-[*.{cs}]
-dotnet_diagnostic.CA1014.severity = none
-# CA1852: Seal internal types
-dotnet_diagnostic.CA1852.severity = none
