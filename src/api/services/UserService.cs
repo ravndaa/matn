@@ -4,7 +4,7 @@ namespace api.services;
 
 public interface IUserService
 {
-    Task CreateUser(SignupUser user);
+    Task<bool> CreateUser(SignupUser user);
 }
 
 public class UserService : IUserService
@@ -14,7 +14,7 @@ public class UserService : IUserService
 
     }
 
-    public async Task CreateUser(SignupUser user)
+    public async Task<bool> CreateUser(SignupUser user)
     {
         await Task.Delay(1);
         throw new NotImplementedException();

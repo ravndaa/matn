@@ -1,3 +1,6 @@
+using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
+
 namespace api.models;
 
 
@@ -8,7 +11,10 @@ public class User
 
 public class SignupUser
 {
-    public string Email { get; set; } = string.Empty;
-    public string Password { get; set; } = string.Empty;
-    public string ConfirmPassword { get; set; } = string.Empty;
+    [Required]
+    public string? Email { get; set; }
+    [Required]
+    public string? Password { get; set; }
+    [Required]
+    public string? ConfirmPassword { get; set; }
 }
